@@ -124,7 +124,7 @@ cron.schedule("0 */12 * * *", () => {
 
 
 
-app.get('/realtime', (req, res) => {
+app.get('/', (req, res) => {
     fetchCookie().then((data) => { 
         cookie = data.headers["set-cookie"][0].split(";")[0];
         fetchMoisture().then((data) => {
