@@ -15,10 +15,12 @@ app.use(cookieParser());
 app.use(cors());
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
+const PORT = process.env.PORT || 4000
+
 
 mongoose.connect('mongodb+srv://jmytwenty8:YZuwqGopYwJvFSB8@realtimedb.qkk9ojv.mongodb.net/plant-iot-realtime?retryWrites=true&w=majority',{useNewUrlParser: true, useUnifiedTopology: true})
   .then((result) => {
-        app.listen(4000);
+        app.listen(PORT);
   })  
   .catch((e) => {
         console.log(e);
